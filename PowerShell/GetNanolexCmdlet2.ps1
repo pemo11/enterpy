@@ -1,6 +1,6 @@
 <#
  .Synopsis
- Erstellen eines Webservice-Cmdlets - Teil 2 - Rückgabe sind Objects (nicht ganz optimal)
+ Erstellen eines Webservice-Cmdlets - Teil 2 - Rückgabe sind dieses Mal Objekte vom Typ Nanolex (etwas besser;)
 #>
 
 $CSCode = @'
