@@ -1,0 +1,50 @@
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>LexColor</Name>
+      <ViewSelectedBy>
+        <TypeName>Nanolex</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Stichwort</Label>
+            <Width>36</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Kategorie</Label>
+            <Width>24</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Definition</Label>
+            <Width>80</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Term</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+               <ScriptBlock>
+                $ColorTopicHash = @{PowerShell="93m";"Windows Server"="92m"}
+                if ($ColorTopicHash.ContainsKey($_.Topic))
+                { $EscColor = $ColorTopicHash[$_.Topic]} else { $EscColor = "97m"}
+                $Esc = [Char]0x1b
+                if ($Host.Name -ne "Windows PowerShell ISE Host")
+                { "${Esc}[$EscColor$($_.Topic.Substring(0,1).ToUpper())$($_.Topic.Substring(1))${Esc}[0m"}
+                else
+                { "$($_.Topic.Substring(0,1).ToUpper())$($_.Topic.Substring(1))" }
+              </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Definition</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+ </Configuration>

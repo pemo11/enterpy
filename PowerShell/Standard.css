@@ -1,0 +1,44 @@
+body {
+     font-family: verdana;
+     font-size: 10pt;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid blue;
+    border-radius: 5px;
+    line-height: 1.4;
+}
+
+th, td {  
+    padding: 0.5em 1em; 
+    text-align: left; 
+    vertical-align: top; /* Standard ist vertical-align: middle */
+}
+
+th { 
+    font-size: 110%;
+    font-variant: small-caps; /* kleine Gro?buchstaben */
+    letter-spacing: 2px; /* etwas Abstand zwischen den Buchstaben */
+    font-weight: normal; /* nicht fett */
+}
+
+thead { 
+    background-color: #f3c600; 
+    color: black; 
+    border-bottom: 1px solid #999; 
+}
+
+tfoot { 
+    border-top: 1px solid #999; 
+}
+
+tr:nth-child(odd) {
+    background-color: #e4ebf2; 
+    color: #000; 
+}
+
+h1 {
+    color: orangered;
+}
